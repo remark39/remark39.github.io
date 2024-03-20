@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precalculus Grade Calculator</title>
+    <style>
+        /* Inline CSS */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        /* Progress bar container */
+        .progress-container {
+            width: 100%;
+            background-color: #eee;
+            margin-top: 20px;
+        }
+
+        /* Progress bar itself */
+        .progress-bar {
+            width: 0%; /* Initial width */
+            height: 30px;
+            background-color: #76A9FA;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            transition: width 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Precalculus Grade Calculator</h1>
+        <form id="gradeCalculator">
+            <div class="input-group">
+                <label for="quizzes">Quizzes Average (%)</label>
+                <input type="number" id="quizzes" min="0" max="100" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="midterm1">Midterm 1 (%)</label>
+                <input type="number" id="midterm1" min="0" max="100" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="midterm2">Midterm 2 (%)</label>
+                <input type="number" id="midterm2" min="0" max="100" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="midterm3">Midterm 3 (%)</label>
+                <input type="number" id="midterm3" min="0" max="100" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="participation">Participation (%)</label>
+                <input type="number" id="participation" min="0" max="100" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="finalExam">Final Exam (%)</label>
+                <input type="number" id="finalExam" min="0" max="100" step="0.01" required>
+            </div>
+            <button type="submit">Calculate Grade</button>
+        </form>
+        <div id="result"></div>
+        <!-- Placeholder for the chart -->
+        <canvas id="gradeDistributionChart"></canvas>
+        <!-- Placeholder for the progress bar -->
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar">0%</div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
